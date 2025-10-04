@@ -37,6 +37,7 @@ export const isSellerAuth = async(req,res)=>{
 // seller logout : /api/seller/logout
 export const sellerLogout = async(req,res)=>{
     try {
+        res.setHeader('Cache-Control', 'no-store');
         res.clearCookie('sellerToken',{
             httpOnly:true,
             secure:process.env.NODE_ENV === 'production',
