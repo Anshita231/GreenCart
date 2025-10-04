@@ -11,6 +11,7 @@ export const sellerLogin = async (req,res)=>{
             secure: process.env.NODE_ENV === 'production',
             sameSite: process.env.NODE_ENV === 'production'? 'none' : 'strict',
             maxAge:7*24*60*1000,
+            path:'/',
         })
         return res.json({success:true, message:"Logged In"})
     }
@@ -40,6 +41,7 @@ export const sellerLogout = async(req,res)=>{
             httpOnly:true,
             secure:process.env.NODE_ENV === 'production',
             sameSite:process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+            path:'/',
         });
         return res.json({success:true, message:"Logged Out"})
     } catch (error) {
