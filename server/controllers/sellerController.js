@@ -11,6 +11,8 @@ export const sellerLogin = async (req,res)=>{
             secure: process.env.NODE_ENV === 'production',
             sameSite: process.env.NODE_ENV === 'production'? 'none' : 'strict',
             maxAge:7*24*60*1000,
+            domain: '.vercel.app', 
+            path: '/',
         })
         return res.json({success:true, message:"Logged In"})
     }
